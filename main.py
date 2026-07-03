@@ -7,7 +7,7 @@ class SmartTextAnalyzer:
     # the first member
     def load_text(self):
         # loading the text from file or text and save it
-        pass
+        print("hhh")
 
     def preprocess_text(self):
         #modifying  (self.text,self.words ,self.sentences) variables
