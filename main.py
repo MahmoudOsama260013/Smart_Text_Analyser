@@ -14,8 +14,34 @@ class SmartTextAnalyzer:
         pass
       # the second member 
     def dashboard(self):
-        #calculate (1. total words 2. unique words 3. character statistics) using (self.words ,self.text)
-        pass
+        """calculate (1. total words 2. unique words 3. character statistics) using (self.words ,self.text)"""
+        
+        # Get unique words using a set
+        unique_words = set(self.words)
+
+        # Join all words together with no spaces, to count number of characters
+        all_chars_no_spaces = "".join(word.strip() for word in self.words)
+
+        # Count how many times each character appears
+        freq_char = {}
+        for char in all_chars_no_spaces:
+            freq_char[char] = freq_char.get(char, 0) + 1
+
+        print("- " * 50)
+        print("SMART TEXT ANALYZER DASHBOARD")
+        print("- " * 50)
+        print(f"Count Of All Words: {len(self.words)}")
+        print(f"Count Of Unique Words: {len(unique_words)}")
+        print(f"Total Characters Without Spaces: {len(all_chars_no_spaces)}")
+        print("- " * 50)
+        print("Characters Frequency")
+        print("- " * 50)
+
+        # Sort characters from most frequent to least frequent
+        sorted_characters = sorted(freq_char.items(), key=lambda x: x[1], reverse=True)
+        for char, freq in sorted_characters:
+            print(f"{char} → {freq}")
+            
       # the third member 
     def search(self):
         # find the word using (self.words ,self.sentences)
