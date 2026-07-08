@@ -18,13 +18,17 @@ class SmartTextAnalyzer:
         pass
         # the third member 
     def search(self , word):
+        #clean up the entered wordss
         word =word.lower()
         number_of_result = 0
+        #splite the entered words 
         requested_word = word.split(" ")
         for sentence_idx,sentence in enumerate(self.sentences , start=1):
+            #check if the entered words in the current sentence
             if word in sentence:
+                #split the current sentence 
                 words_in_sentence = sentence.split(" ")
-                #Find word position in the sentence
+                #Find words position in the sentence
                 for word_idx , current_word  in enumerate(words_in_sentence , start=1) :
                     if requested_word == words_in_sentence[word_idx -1 : word_idx -1 + len(requested_word)]:
                         number_of_result+=1
