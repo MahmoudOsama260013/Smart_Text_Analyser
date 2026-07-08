@@ -1,3 +1,5 @@
+import string
+
 class SmartTextAnalyzer:
 
     def __init__(self):
