@@ -25,6 +25,8 @@ class SmartTextAnalyzer:
         # modify self.text and call preprocess_text() to update (self.words ,self.sentences)
         # we may need to save the previous text before replacing if we choose undo/redo feature
         pass
+    def next_word_prediction(self):
+        pass
       # after finishing another method (easy)
     def menu(self):
         # display menu and call the correct method  
