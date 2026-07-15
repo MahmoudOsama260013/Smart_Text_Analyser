@@ -93,6 +93,8 @@ class SmartTextAnalyzer:
                     number_of_result+=1
                     print(f"{number_of_result}: {sentence}")
                     print (f"Found in sentence {sentence_idx}, word position {word_idx}")
+        if number_of_result == 0:
+            print("Word Not Found")
         return number_of_result > 0
     #fourth member
     def replace_word(self):
