@@ -81,6 +81,7 @@ class SmartTextAnalyzer:
         pass
         # the third member 
     def search(self , word):
+        #clean up the entered wordss
         word =word.lower()
         number_of_result = 0
         requested_word = word.split()
