@@ -38,7 +38,7 @@ class SmartTextAnalyzer:
         temp = self.text
         temp = temp.replace('!', '.')
         temp = temp.replace('?', '.')
-        self.sentences = [s.strip() for s in temp.split('.') if s.strip()]
+        self.sentences = [s.strip().lower() for s in temp.split('.') if s.strip()]
         punctuation = string.punctuation.replace("'", "")  
         translator = str.maketrans("", "", punctuation)
         clean_text = self.text.lower().translate(translator)
