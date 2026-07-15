@@ -43,6 +43,7 @@ class SmartTextAnalyzer:
         translator = str.maketrans("", "", punctuation)
         clean_text = self.text.lower().translate(translator)
         self.words = clean_text.split()
+        self.build_trie()
       # the second member 
     def dashboard(self):
         #calculate (1. total words 2. unique words 3. character statistics) using (self.words ,self.text)
