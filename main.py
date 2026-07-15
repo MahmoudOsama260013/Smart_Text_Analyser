@@ -51,8 +51,44 @@ class SmartTextAnalyzer:
         # modify self.text and call preprocess_text() to update (self.words ,self.sentences)
         # we may need to save the previous text before replacing if we choose undo/redo feature
         pass
+    
+    def build_bigram_counts(self):
+        self.bigram_counts = {}
+        # build bigram counts: {word : {next_word: count}}
+        for i in range(len(self.words) - 1):
+            word = self.words[i]
+            next_word = self.words[i + 1]
+            if word not in self.bigram_counts:
+                self.bigram_counts[word] = {}
+            self.bigram_counts[word][next_word] = self.bigram_counts[word].get(next_word, 0) + 1
+            
     def next_word_prediction(self):
-        pass
+        # keep asking until we get a valid word or the user exits
+        while True:
+            target_word = input("Enter the word to get next (or 'exit' to cancel): ").strip().lower()
+            if target_word == "exit":
+                return
+            if target_word not in self.bigram_counts:
+                print("Sorry the word not found, try again")
+            else:
+                next_words_freq = self.bigram_counts[target_word]
+                break
+            
+        # find the next word(s) with the highest frequency 
+        max_count = 0
+        most_freq_words = []
+        for next_word, freq in next_words_freq.items():
+            if freq > max_count:
+                max_count = freq
+                most_freq_words = [next_word]  # reset list, new max found
+            elif freq == max_count:
+                most_freq_words.append(next_word)  # add to list
+                
+        # display results
+        print(f"( {len(most_freq_words)} ) words match")
+        for suggestion in most_freq_words:
+            print(f"{target_word} {suggestion}")
+            
       # after finishing another method (easy)
     def menu(self):
         # display menu and call the correct method  
