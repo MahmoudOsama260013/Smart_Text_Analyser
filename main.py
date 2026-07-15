@@ -4,6 +4,7 @@ class SmartTextAnalyzer:
         self.text = ""
         self.words = []
         self.sentences = []
+        self.bigram_counts = {}
     # the first member
     def load_text(self):
         # loading the text from file or text and save it
