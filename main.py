@@ -1,3 +1,5 @@
+from trie import Trie
+
 class SmartTextAnalyzer:
 
     def __init__(self):
