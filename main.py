@@ -6,6 +6,7 @@ class SmartTextAnalyzer:
         self.text = ""
         self.words = []
         self.sentences = []
+        self.trie = Trie()
     # the first member
     def load_text(self):
         # loading the text from file or text and save it
@@ -33,45 +34,45 @@ class SmartTextAnalyzer:
     def menu(self):
         # display menu and call the correct method  
         while True:
-                while True:
-        print("\n===== Smart Text Analyzer =====")
-        print("1. Load Text")
-        print("2. Dashboard")
-        print("3. Search")
-        print("4. Replace Word")
-        print("5. Next Word Prediction")
-        print("6. Autocompletion")
-        print("0. Exit")
-
-        choice = input("Enter your choice: ")
-
-        if choice == "1":
-            self.load_text()
-
-        elif choice == "2":
-            self.dashboard()
-
-        elif choice == "3":
-            word = input("Enter word to search: ")
-            self.search(word)
-
-        elif choice == "4":
-            self.replace_word()
-
-        elif choice == "5":
-            self.next_word_prediction()
-
-        elif choice == "6":
-            prefix = input("Enter prefix: ").lower()
-            self.autocompletion(prefix)
-
-        elif choice == "0":
-            print("Goodbye!")
-            break
-
-        else:
-            print("Invalid choice!")
-        pass
+               
+            print("\n===== Smart Text Analyzer =====")
+            print("1. Load Text")
+            print("2. Dashboard")
+            print("3. Search")
+            print("4. Replace Word")
+            print("5. Next Word Prediction")
+            print("6. Autocompletion")
+            print("0. Exit")
+    
+            choice = input("Enter your choice: ")
+    
+            if choice == "1":
+                self.load_text()
+    
+            elif choice == "2":
+                self.dashboard()
+    
+            elif choice == "3":
+                word = input("Enter word to search: ")
+                self.search(word)
+    
+            elif choice == "4":
+                self.replace_word()
+    
+            elif choice == "5":
+                self.next_word_prediction()
+    
+            elif choice == "6":
+                prefix = input("Enter prefix: ").lower()
+                self.autocompletion(prefix)
+    
+            elif choice == "0":
+                print("Goodbye!")
+                break
+    
+            else:
+                print("Invalid choice!")
+        
 
 
 analyzer = SmartTextAnalyzer()
