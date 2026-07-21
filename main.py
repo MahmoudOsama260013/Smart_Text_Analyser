@@ -16,7 +16,9 @@ class SmartTextAnalyzer:
       # the second member 
     def dashboard(self):
         """calculate (1. total words 2. unique words 3. character statistics) using (self.words ,self.text)"""
-        
+        if not self.words:
+            print("No text loaded! Please load text first.")
+            return
         # Get unique words using a set
         unique_words = set(self.words)
 
@@ -64,6 +66,9 @@ class SmartTextAnalyzer:
             self.bigram_counts[word][next_word] = self.bigram_counts[word].get(next_word, 0) + 1
             
     def next_word_prediction(self):
+        if not self.words:
+            print("No text loaded!")
+            return
         # keep asking until we get a valid word or the user exits
         while True:
             target_word = input("Enter the word to get next (or 'exit' to cancel): ").strip().lower()
