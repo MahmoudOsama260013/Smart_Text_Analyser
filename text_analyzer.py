@@ -19,8 +19,21 @@ class SmartTextAnalyzer:
         pass
       # the third member 
     def search(self):
-        # find the word using (self.words ,self.sentences)
-        pass
+        #clean up the entered wordss
+        word =word.lower()
+        number_of_result = 0
+        requested_word = word.split()
+        for sentence_idx,sentence in enumerate(self.sentences , start=1):
+            words_in_sentence = sentence.split()
+            #Find word position in the sentence
+            for word_idx , current_word  in enumerate(words_in_sentence , start=1) :
+                if requested_word == words_in_sentence[word_idx -1 : word_idx -1 + len(requested_word)]:
+                    number_of_result+=1
+                    print(f"{number_of_result}: {sentence}")
+                    print (f"Found in sentence {sentence_idx}, word position {word_idx}")
+        if number_of_result == 0 :
+            print("Word not found")
+        return number_of_result > 0
       #fourth member
     def replace_word(self):
         # modify self.text and call preprocess_text() to update (self.words ,self.sentences)
@@ -29,6 +42,23 @@ class SmartTextAnalyzer:
     def next_word_prediction(self):
         pass
       # after finishing another method (easy)
+        #Build the Trie 
+    def build_trie(self):
+        self.trie = Trie()
+        for word in self.words:
+            self.trie.insert(word)
+
+    def autocompletion(self , prefix):
+        suggestions = self.trie.autocomplete(prefix)
+
+        if not suggestions:
+            print("No suggestions found.")
+            return
+
+        print("\nAutocomplete suggestions:")
+
+        for word , frequency in suggestions:
+            print(f"{word}")
     def menu(self):
         # display menu and call the correct method  
         while True:
