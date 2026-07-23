@@ -18,6 +18,9 @@ class SmartTextAnalyzer:
         
     def load_text(self):
         """Load text manually or from a file."""
+        self.undo_stack.clear()
+        self.redo_stack.clear()
+        
         print("Choose input method:")
         print("1. Enter text manually")
         print("2. Load text from file")
