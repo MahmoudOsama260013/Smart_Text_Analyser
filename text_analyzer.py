@@ -1,4 +1,9 @@
-
+"""
+_ 1. Mahmoud Osama Hassan Alsagga (120255986)
+_ 2. Mahmoud Hamdi Ahmed Abu Saada (120254600)
+_ 3. Anas Mohammed Hamdan AbuQuta - (120258226)
+_ 4.Ramadan Fadi Ramadan Ziara -(120259831)
+"""
 import string
 import re
 
@@ -247,13 +252,13 @@ class SmartTextAnalyzer:
             print(f"{char} → {freq}")
       # the third member 
     def search(self,word):
-        if not word:
+        if not word.split():
             print("Invalid Input")
             return False
         #clean up the entered wordss
         word =word.lower()
         number_of_result = 0
-        requested_word = word.split()
+        requested_word = word.strip()
         # find the sentence
         for sentence_idx,sentence in enumerate(self.sentences , start=1):
             words_in_sentence = sentence.split()
