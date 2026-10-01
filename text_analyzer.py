@@ -4,6 +4,12 @@ _ 2. Mahmoud Hamdi Ahmed Abu Saada (120254600)
 _ 3. Anas Mohammed Hamdan AbuQuta - (120258226)
 _ 4.Ramadan Fadi Ramadan Ziara -(120259831)
 """
+"""
+_ 1. Mahmoud Osama Hassan Alsagga (120255986)
+_ 2. Mahmoud Hamdi Ahmed Abu Saada (120254600)
+_ 3. Anas Mohammed Hamdan AbuQuta - (120258226)
+_ 4.Ramadan Fadi Ramadan Ziara -(120259831)
+"""
 import string
 import re
 
@@ -23,6 +29,9 @@ class SmartTextAnalyzer:
         
     def load_text(self):
         """Load text manually or from a file."""
+        self.undo_stack.clear()
+        self.redo_stack.clear()
+        
         self.undo_stack.clear()
         self.redo_stack.clear()
         
@@ -252,7 +261,7 @@ class SmartTextAnalyzer:
             print(f"{char} → {freq}")
       # the third member 
     def search(self,word):
-        if not word.split():
+        if not word.strip():
             print("Invalid Input")
             return False
         #clean up the entered wordss
@@ -376,7 +385,7 @@ class SmartTextAnalyzer:
     def menu(self):
         # display menu and call the correct method  
         while True:
-               
+
             print("1. Load Text")
             print("2. Dashboard")
             print("3. Search")
