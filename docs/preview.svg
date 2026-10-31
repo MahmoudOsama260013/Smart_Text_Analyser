@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="472" viewBox="0 0 1280 472">
+<rect width="1280" height="472" rx="20" fill="#0f172a"/>
+<text x="40" y="55" fill="#f8fafc" font-family="sans-serif" font-size="30" font-weight="700">Smart Text Analyzer</text>
+<text x="40" y="92" fill="#5eead4" font-family="sans-serif" font-size="18">Actual method output · synthetic sample text</text>
+<path d="M40 116H1240" stroke="#334155"/>
+<text x="40" y="150" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve">Sample text: Python helps analyze data. Python helps build tools. Data analysis uses</text>
+<text x="40" y="176" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve">Python.</text>
+<text x="40" y="202" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve"></text>
+<text x="40" y="228" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve">Prefix: py</text>
+<text x="40" y="254" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve"></text>
+<text x="40" y="280" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve">Autocomplete suggestions:</text>
+<text x="40" y="306" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve">python</text>
+<text x="40" y="332" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve">Enter the word to get next (or &#x27;exit&#x27; to cancel): ( 1 ) words match</text>
+<text x="40" y="358" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve">python helps</text>
+<text x="40" y="384" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve"></text>
+<text x="40" y="410" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve">Compare with: Python helps analyze data.</text>
+<text x="40" y="436" fill="#e2e8f0" font-family="monospace" font-size="20" xml:space="preserve">Jaccard similarity: 50.00%</text>
+</svg>
