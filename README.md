@@ -4,6 +4,12 @@
 
 A modular command-line text analysis application built with Python. The project provides several text-processing utilities, including text statistics, search and replacement, autocomplete using a Trie, next-word prediction using bigram frequencies, text similarity analysis, and undo/redo support.
 
+## Output Preview
+
+![Smart Text Analyzer sample output](docs/preview.svg)
+
+This preview renders output from the existing autocomplete, next-word suggestion, and similarity methods using synthetic sample text. It is a formatted output preview, not a screenshot of a graphical interface.
+
 ## Features
 
 - Load text manually or from a text file
